@@ -27,6 +27,12 @@ Park.prototype.getDinosaursWithOffspringCountOf2OrMore = function() {
   return dinoArray;
 }
 
-
+Park.prototype.getDinosaursAfterSetNumberOfYears = function(numberOfYears) {
+  dinoCount = 0;
+  for (dinosaur of this.enclosure) {
+    dinoCount += (1 + dinosaur.numberOfOffspringPerYear) ** numberOfYears;
+  }
+  return dinoCount;
+}
 
 module.exports = Park;
