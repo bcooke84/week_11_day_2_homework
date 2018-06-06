@@ -38,7 +38,7 @@ describe('Park', function() {
     park.addDinosaur(dinosaur2);
     park.addDinosaur(dinosaur5);
     park.addDinosaur(dinosaur6);
-    park.removeDinosaurByType("Tyrannosaurus");
+    park.removeDinosaurByType("Triceratops");
     assert.strictEqual(park.enclosure.length, 4);
   })
 

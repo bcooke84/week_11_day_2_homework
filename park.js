@@ -9,18 +9,17 @@ Park.prototype.addDinosaur = function(dinosaur) {
 }
 
 Park.prototype.removeDinosaurByType = function(type) {
-  for (var i = 0; i < this.enclosure.length; i++) {
+  for (let i = this.enclosure.length - 1; i >= 0; i--) {
     if (this.enclosure[i].type === type) {
       this.enclosure.splice(i, 1);
-      i--;
     }
   }
 }
 
 Park.prototype.getDinosaursWithOffspringCountOf2OrMore = function() {
   const dinoArray = [];
-  for(var dinosaur of this.enclosure) {
-    if(dinosaur.numberOfOffspringPerYear >= 2) {
+  for(let dinosaur of this.enclosure) {
+    if(dinosaur.offspringPerYear >= 2) {
       dinoArray.push(dinosaur);
     }
   }
@@ -29,8 +28,8 @@ Park.prototype.getDinosaursWithOffspringCountOf2OrMore = function() {
 
 Park.prototype.getDinosaursAfterSetNumberOfYears = function(numberOfYears) {
   dinoCount = 0;
-  for (dinosaur of this.enclosure) {
-    dinoCount += (1 + dinosaur.numberOfOffspringPerYear) ** numberOfYears;
+  for (let dinosaur of this.enclosure) {
+    dinoCount += (1 + dinosaur.offspringPerYear) ** numberOfYears;
   }
   return dinoCount;
 }

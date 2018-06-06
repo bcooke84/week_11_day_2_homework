@@ -1,6 +1,6 @@
-const Dinosaur = function(type, numberOfOffspring) {
+const Dinosaur = function(type, offspringPerYear) {
   this.type = type;
-  this.numberOfOffspringPerYear = numberOfOffspring;
+  this.offspringPerYear = offspringPerYear;
 }
 
 
